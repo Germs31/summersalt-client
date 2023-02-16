@@ -16,7 +16,7 @@ import './App.css';
 
 function App() {
   return (
-    <Container disableGutters>
+    <div className="App">
         <Layout>
           <Routes>
             <Route path='/' element={<Landing/>}/>
@@ -26,8 +26,7 @@ function App() {
             <Route path='/work' element={<Work/>}/>
           </Routes>
         </Layout>
-
-    </Container>
+    </div>
   );
 }
 

@@ -2,15 +2,23 @@ import React from 'react'
 // MUI
 import { 
     Container,
-    Typography
+    Typography,
+    Box
 } from '@mui/material'
+// Styles
+import { StyledLandingContainer } from '../styles/landingStyles'
 
 const Landing = () => {
     return (
-        <Container sx={{marginTop: "500px"}}>
-            <Typography>German Nunez</Typography>
-            <Typography>Software Engineer</Typography>
-        </Container>
+        <StyledLandingContainer>
+            <Box>
+                <Typography variant="h2">German Nunez</Typography>
+                <Typography variant="h5">Software Engineer</Typography>
+            </Box>
+            <Box>
+                
+            </Box>
+        </StyledLandingContainer>
     )
 }
 

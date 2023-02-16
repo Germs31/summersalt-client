@@ -12,7 +12,10 @@ import {
     Box
 } from '@mui/material'
 // Styles
-import { StyledAppBar } from '../styles/layoutStyles'
+import { 
+  StyledAppBar,
+  StyledLayoutContainer
+} from '../styles/layoutStyles'
 
 const navRoutes = [
     {
@@ -40,9 +43,9 @@ const Layout = (props: any) => {
     const routeToPage = (route: string) => {
         navigate(route)
     }
-    
+
     return (
-      <Container disableGutters>
+      <StyledLayoutContainer>
         <StyledAppBar elevation={0}>
           <Toolbar>
             {/* Logo */}
@@ -50,6 +53,7 @@ const Layout = (props: any) => {
               variant="h6"
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              onClick={() => navigate('/')}
             >
               GRMNZ
             </Typography>
@@ -65,10 +69,11 @@ const Layout = (props: any) => {
             </Box>
           </Toolbar>
         </StyledAppBar>
-
+        
+        {/* allows passing of page components */}
         {props.children}
 
-      </Container>
+      </StyledLayoutContainer>
     );
 }
 
