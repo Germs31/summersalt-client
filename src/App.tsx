@@ -3,6 +3,8 @@ import React from 'react';
 import {Routes, Route} from 'react-router'
 // Pages
 import Landing from './pages/Landing'
+// Components
+import Layout from './components/Layout'
 // MUI
 import { Container } from '@mui/material'
 // Styling
@@ -10,10 +12,13 @@ import './App.css';
 
 function App() {
   return (
-    <Container>
-      <Routes>
-        <Route path='/' element={<Landing/>}/>
-      </Routes>
+    <Container disableGutters>
+        <Layout>
+          <Routes>
+            <Route path='/' element={<Landing/>}/>
+          </Routes>
+        </Layout>
+
     </Container>
   );
 }

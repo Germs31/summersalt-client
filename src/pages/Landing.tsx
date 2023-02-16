@@ -1,12 +1,16 @@
 import React from 'react'
 // MUI
-import { Container } from '@mui/material'
+import { 
+    Container,
+    Typography
+} from '@mui/material'
 
 const Landing = () => {
     return (
-        <div>
-            Landing
-        </div>
+        <Container sx={{marginTop: "500px"}}>
+            <Typography>German Nunez</Typography>
+            <Typography>Software Engineer</Typography>
+        </Container>
     )
 }
 
