@@ -1,4 +1,6 @@
 import React from 'react'
+// React Router
+import { useNavigate } from 'react-router'
 // MUI
 import { 
     Container,
@@ -18,8 +20,8 @@ const navRoutes = [
         route: "/blog"
     },
     {
-        name: "02. Projects",
-        route: "/projects"
+        name: "02. Work",
+        route: "/work"
     },
     {
         name: "03. About",
@@ -32,6 +34,13 @@ const navRoutes = [
 ]
 
 const Layout = (props: any) => {
+
+    const navigate = useNavigate()
+
+    const routeToPage = (route: string) => {
+        navigate(route)
+    }
+    
     return (
       <Container disableGutters>
         <StyledAppBar elevation={0}>
@@ -47,7 +56,7 @@ const Layout = (props: any) => {
 
             <Box sx={{ display:"flex" }}>
               {navRoutes.map((item: any, idx: number) => (
-                  <div key={idx}>
+                  <div key={idx} onClick={() => routeToPage(item.route)}>
                     <Typography sx={{margin: "0 20px"}}>
                         {item.name}
                     </Typography>
