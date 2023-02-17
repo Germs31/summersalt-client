@@ -7,11 +7,11 @@ import {
 
 export const StyledAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
     background: theme.palette.primary.main,
-    color: "#FFECD1",
+    color: theme.palette.secondary.main,
     fontWeight: "bold"
 }));
 export const StyledLayoutContainer = styled('div')(({ theme }) => ({
-    background: "#001524",
-    color: "#FFECD1",
+    background: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
     fontWeight: "bold",
 }));

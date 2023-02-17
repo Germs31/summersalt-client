@@ -6,7 +6,12 @@ import {
     Box
 } from '@mui/material'
 // Styles
-import { StyledLandingContainer } from '../styles/landingStyles'
+import { 
+    StyledLandingContainer,
+    StyledImgContainer
+} from '../styles/landingStyles'
+// Img
+import PorfileImg from '../assets/headshot_nobg.png'
 
 const Landing = () => {
     return (
@@ -15,9 +20,9 @@ const Landing = () => {
                 <Typography variant="h2">German Nunez</Typography>
                 <Typography variant="h5">Software Engineer</Typography>
             </Box>
-            <Box>
-                
-            </Box>
+            <StyledImgContainer>
+                <img src={PorfileImg} alt="german nunez selfie" />
+            </StyledImgContainer>
         </StyledLandingContainer>
     )
 }
