@@ -1,6 +1,7 @@
 import React from 'react'
 // React Router
 import { useNavigate } from 'react-router'
+import { Outlet } from "react-router-dom";
 // MUI
 import { 
     Container,
@@ -20,7 +21,7 @@ import {
 const navRoutes = [
     {
         name: "01. Blogs",
-        route: "/blog"
+        route: "/blogs"
     },
     {
         name: "02. Work",
@@ -36,7 +37,7 @@ const navRoutes = [
     },
 ]
 
-const Layout = (props: any) => {
+const Layout = () => {
 
     const navigate = useNavigate()
 
@@ -71,7 +72,7 @@ const Layout = (props: any) => {
         </StyledAppBar>
         
         {/* allows passing of page components */}
-        {props.children}
+        <Outlet/>
 
       </StyledLayoutContainer>
     );
