@@ -4,11 +4,7 @@ import { useNavigate } from 'react-router'
 import { Outlet } from "react-router-dom";
 // MUI
 import { 
-    Container,
-    AppBar,
     Toolbar,
-    List,
-    ListItem,
     Typography,
     Box
 } from '@mui/material'

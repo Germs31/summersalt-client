@@ -10,24 +10,29 @@ import Work from './pages/Work'
 // Components
 import Layout from './components/Layout'
 // MUI 
-import { Container } from '@mui/material'
+import { Button } from '@mui/material'
 // MUI Style and Theme
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { appTheme } from "./theme";
 
 function App() {
   return (
-    <div className="app">
-          <Routes>
-            <Route element={<Layout/>}>
-              <Route path="/" element={<Landing/>}/>
-              <Route path='/about' element={<About/>}/>
-              <Route path='/blogs' element={<Blogs/>}/>
-              <Route path='/contact' element={<Contact/>}/>
-              <Route path='/work' element={<Work/>}/>
-            </Route>
-          </Routes>
-    </div>
+    <ThemeProvider theme={appTheme}>
+      <CssBaseline enableColorScheme/>
+      <div className="app">
+      {/* <Button color="primary" variant="contained">hi</Button>
+      <Button color="secondary" variant="contained">bye</Button> */}
+            <Routes>
+              <Route element={<Layout/>}>
+                <Route path="/" element={<Landing/>}/>
+                <Route path='/about' element={<About/>}/>
+                <Route path='/blogs' element={<Blogs/>}/>
+                <Route path='/contact' element={<Contact/>}/>
+                <Route path='/work' element={<Work/>}/>
+              </Route>
+            </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 

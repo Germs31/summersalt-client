@@ -6,7 +6,7 @@ import {
 } from "@mui/material"
 
 export const StyledAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
-    background: "#001524",
+    background: theme.palette.primary.main,
     color: "#FFECD1",
     fontWeight: "bold"
 }));
