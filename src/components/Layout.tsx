@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // React Router
 import { useNavigate } from 'react-router'
 import { Outlet } from "react-router-dom";
@@ -8,6 +8,7 @@ import {
     Typography,
     Box
 } from '@mui/material'
+import {DarkMode, Light, LightMode } from '@mui/icons-material';
 // Styles
 import { 
   StyledAppBar,
@@ -37,6 +38,8 @@ const Layout = () => {
 
     const navigate = useNavigate()
 
+    const [ mode, setMode ] = useState<Boolean>(true)
+
     const routeToPage = (route: string) => {
         navigate(route)
     }
@@ -63,6 +66,14 @@ const Layout = () => {
                     </Typography>
                   </div>
               ))}
+            </Box>
+            <Box onClick={() => setMode(!mode)}>
+              {
+                mode ?
+                <DarkMode/>
+                :
+                <LightMode/>
+              }
             </Box>
           </Toolbar>
         </StyledAppBar>
