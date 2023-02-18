@@ -14,6 +14,8 @@ import {
   StyledAppBar,
   StyledLayoutContainer
 } from '../styles/layoutStyles'
+// Import State 
+import { AppState } from '../context/StateProvider'
 
 const navRoutes = [
     {
@@ -37,8 +39,7 @@ const navRoutes = [
 const Layout = () => {
 
     const navigate = useNavigate()
-
-    const [ mode, setMode ] = useState<Boolean>(true)
+    const { applicationState, setMode } = AppState()
 
     const routeToPage = (route: string) => {
         navigate(route)
@@ -67,9 +68,9 @@ const Layout = () => {
                   </div>
               ))}
             </Box>
-            <Box onClick={() => setMode(!mode)}>
+            <Box onClick={() => setMode(applicationState.mode === "dark" ? "light" : "dark")}>
               {
-                mode ?
+                applicationState.mode === "dark" ?
                 <DarkMode/>
                 :
                 <LightMode/>

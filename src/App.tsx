@@ -13,15 +13,17 @@ import Layout from './components/Layout'
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import { lightAppTheme } from './themes/light'
 import { darkAppTheme } from './themes/dark'
+// Import State 
+import { AppState } from './context/StateProvider'
 
 
 function App() {
 
-  const [ mode, setMode ] = useState<string>("light")
+  const { applicationState } = AppState()
 
   const theme = React.useMemo(
-    () => createTheme(mode === "light" ? lightAppTheme : darkAppTheme),
-    [mode]
+    () => createTheme(applicationState.mode === "light" ? lightAppTheme : darkAppTheme),
+    [applicationState.mode]
   )
 
   return (
