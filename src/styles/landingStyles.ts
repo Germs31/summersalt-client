@@ -24,3 +24,8 @@ export const StyledImgContainer = styled(Box)<BoxProps>(({ theme }) => ({
     borderRadius: "50%",
     background: theme.palette.common.white
 }));
+
+export const StyledExpertiseContainer = styled(Container)<ContainerProps>(({theme}) => ({
+    display: "flex",
+    justifyContent: "space-around"
+}))
