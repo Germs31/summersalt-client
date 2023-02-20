@@ -4,7 +4,11 @@ import {
     Container, 
     ContainerProps,
     Box,
-    BoxProps
+    BoxProps,
+    Typography,
+    TypographyProps,
+    Card,
+    CardProps
 } from "@mui/material"
 
 export const StyledLandingContainer = styled(Container)<ContainerProps>(({ theme }) => ({
@@ -31,3 +35,22 @@ export const StyledExpertiseContainer = styled(Container)<ContainerProps>(({them
     justifyContent: "space-around",
     alignItems: "center"
 }))
+export const StyledLatestActivityContainer = styled(Container)<ContainerProps>(({theme}) => ({
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center"
+}))
+
+
+// Maybe make a general style component file for this section? 
+export const StyledTitle = styled(Typography)<TypographyProps>(({theme}) => ({
+    fontSize: "24px",
+    fontWeight: "700",
+    letterSpacing: "1.5px",
+    margin: "0 32px"
+}))
+
+export const StyledCard = styled(Card)<CardProps>(({theme}) => ({
+    width: "350px",
+}))
+// End section

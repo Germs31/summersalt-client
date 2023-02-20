@@ -11,18 +11,23 @@ import {
 import { 
     StyledLandingContainer,
     StyledImgContainer,
-    StyledExpertiseContainer
+    StyledExpertiseContainer,
+    StyledTitle,
+    StyledLatestActivityContainer
 } from '../styles/landingStyles'
+// Componenets
+import UtilityCard from '../components/UtilityCard'
 // Img
 import PorfileImg from '../assets/headshot_nobg.png'
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import EngineeringIcon from '@mui/icons-material/Engineering';
-// Style
-import { StyledLayoutContainer } from '../styles/layoutStyles'
+// Data
+import { portfolioWork } from '../data'
 
 const Landing = () => {
     return (
         <Container>
+            {/* landing */}
             <StyledLandingContainer>
                 <Box>
                     <Typography variant="h2">German Nunez</Typography>
@@ -32,7 +37,9 @@ const Landing = () => {
                     <img src={PorfileImg} alt="german nunez selfie" />
                 </StyledImgContainer>
             </StyledLandingContainer>
+            {/* Expertise */}
             <StyledExpertiseContainer>
+                <StyledTitle>Expertise</StyledTitle>
                 <Card sx={{width: "350px"}}>
                     <CardContent>
                         <ArchitectureIcon fontSize="large"/>
@@ -48,6 +55,27 @@ const Landing = () => {
                     </CardContent>
                 </Card>
             </StyledExpertiseContainer>
+            {/* Recent work/blogs?  */}
+            <Container>
+                <StyledTitle>Latest Activity</StyledTitle>
+                <StyledLatestActivityContainer>
+                    {
+                        portfolioWork.map((work: any, index: number) => {
+                            if(index < 4) {
+                                return <UtilityCard
+                                            title={work.title}
+                                            description={work.description}
+                                            img={work.img}/>
+                            }
+                        })
+                    }
+                </StyledLatestActivityContainer>
+            </Container>
+            {/* footer */}
+
+            <Container sx={{display: 'flex', alignItems: "center", justifyContent: "center"}}>
+                    Made with Love { new Date().getFullYear() } by GRMNZ
+            </Container>
         </Container>
     )
 }
