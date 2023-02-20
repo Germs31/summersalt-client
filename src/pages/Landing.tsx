@@ -5,7 +5,10 @@ import {
     Typography,
     Box,
     Card,
-    CardContent
+    CardContent,
+    Stepper,
+    StepLabel,
+    StepContent
 } from '@mui/material'
 // Styles
 import { 
@@ -22,7 +25,7 @@ import PorfileImg from '../assets/headshot_nobg.png'
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 // Data
-import { portfolioWork } from '../data'
+import { portfolioWork, employmentList } from '../data'
 
 const Landing = () => {
     return (
@@ -55,6 +58,25 @@ const Landing = () => {
                     </CardContent>
                 </Card>
             </StyledExpertiseContainer>
+            <Container>
+                <StyledTitle>Employment History</StyledTitle>
+                <Stepper activeStep={-1} orientation="vertical">
+                    {
+                        employmentList.map((emply: any) => (
+                            <>
+                        
+                                <StepLabel>{emply.title}</StepLabel>
+                                <StepContent>
+                                    <div>{emply.location}</div>
+                                    <div>{emply.position}</div>
+                                    <div>{emply.dates}</div>
+                                </StepContent>
+                            </>
+                        ))
+                    }
+
+                </Stepper>
+            </Container>
             {/* Recent work/blogs?  */}
             <Container>
                 <StyledTitle>Latest Activity</StyledTitle>
