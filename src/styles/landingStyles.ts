@@ -26,6 +26,8 @@ export const StyledImgContainer = styled(Box)<BoxProps>(({ theme }) => ({
 }));
 
 export const StyledExpertiseContainer = styled(Container)<ContainerProps>(({theme}) => ({
+    height: "100vh",
     display: "flex",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    alignItems: "center"
 }))

@@ -31,7 +31,6 @@ const Landing = () => {
                 <StyledImgContainer>
                     <img src={PorfileImg} alt="german nunez selfie" />
                 </StyledImgContainer>
-
             </StyledLandingContainer>
             <StyledExpertiseContainer>
                 <Card sx={{width: "350px"}}>
